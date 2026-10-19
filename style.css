@@ -199,3 +199,111 @@ footer {
         gap: 12px;
     }
 }
+
+/* ===== Etapa 2: melhorias visuais e responsividade ===== */
+
+header {
+    background: linear-gradient(135deg, #172554, #1d4ed8);
+    padding: 40px 20px;
+}
+
+header p {
+    color: #dbeafe;
+}
+
+section {
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s ease;
+}
+
+section:hover {
+    box-shadow: 0 6px 20px rgba(23, 37, 84, 0.10);
+}
+
+input,
+select,
+textarea {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+#lista-jogos li article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lista-jogos li article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+#quantidade {
+    display: inline-block;
+    min-width: 28px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Tablets */
+@media (max-width: 800px) {
+    main {
+        width: calc(100% - 32px);
+    }
+
+    #lista-jogos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    header {
+        padding: 28px 16px;
+    }
+
+    main {
+        width: calc(100% - 20px);
+    }
+
+    form,
+    #lista-jogos {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+/* Acessibilidade: respeitar preferência por menos animações */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
