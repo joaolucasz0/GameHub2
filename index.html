@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GameHub - Seu catálogo pessoal de jogos">
+    <title>GameHub | Catálogo de Jogos</title>
+</head> <link rel="stylesheet" href="assets/css/style.css">
+<body>
+
+    <header>
+        <h1>GameHub</h1>
+        <p>Seu catálogo pessoal de jogos</p>
+
+        <nav aria-label="Navegação principal">
+            <a href="#cadastro">Cadastrar jogo</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#detalhes">Detalhes</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cadastro">
+            <h2>Cadastrar novo jogo</h2>
+
+            <form id="form-jogo">
+                <div>
+                    <label for="nome">Nome do jogo:</label>
+                    <input type="text" id="nome" name="nome"
+                           placeholder="Ex.: Minecraft" required>
+                </div>
+
+                <div>
+                    <label for="genero">Gênero:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Selecione um gênero</option>
+                        <option value="Ação">Ação</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Esporte">Esporte</option>
+                        <option value="Corrida">Corrida</option>
+                        <option value="Estratégia">Estratégia</option>
+                        <option value="Simulação">Simulação</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="plataforma">Plataforma:</label>
+                    <select id="plataforma" name="plataforma" required>
+                        <option value="">Selecione uma plataforma</option>
+                        <option value="PC">PC</option>
+                        <option value="PlayStation">PlayStation</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Nintendo Switch">Nintendo Switch</option>
+                        <option value="Celular">Celular</option>
+                        <option value="Outra">Outra</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="ano">Ano de lançamento:</label>
+                    <input type="number" id="ano" name="ano"
+                           min="1950" max="2100"
+                           placeholder="Ex.: 2011" required>
+                </div>
+
+                <div>
+                    <label for="nota">Minha nota (0 a 10):</label>
+                    <input type="number" id="nota" name="nota"
+                           min="0" max="10" step="0.5"
+                           placeholder="Ex.: 9.5" required>
+                </div>
+
+                <div>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="">Selecione o status</option>
+                        <option value="Quero jogar">Quero jogar</option>
+                        <option value="Jogando">Jogando</option>
+                        <option value="Concluído">Concluído</option>
+                        <option value="Abandonado">Abandonado</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao"
+                              rows="4"
+                              placeholder="Escreva uma breve descrição..."
+                              required></textarea>
+                </div>
+
+                <button type="submit">Cadastrar jogo</button>
+                <button type="reset">Limpar formulário</button>
+            </form>
+        </section>
+
+        <section id="catalogo">
+            <h2>Meu catálogo</h2>
+
+            <div>
+                <label for="busca">Pesquisar jogo:</label>
+                <input type="search" id="busca"
+                       placeholder="Digite o nome de um jogo">
+            </div>
+
+            <div>
+                <label for="filtro-genero">Filtrar por gênero:</label>
+                <select id="filtro-genero">
+                    <option value="">Todos os gêneros</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="RPG">RPG</option>
+                    <option value="Esporte">Esporte</option>
+                    <option value="Corrida">Corrida</option>
+                    <option value="Estratégia">Estratégia</option>
+                    <option value="Simulação">Simulação</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="filtro-status">Filtrar por status:</label>
+                <select id="filtro-status">
+                    <option value="">Todos os status</option>
+                    <option value="Quero jogar">Quero jogar</option>
+                    <option value="Jogando">Jogando</option>
+                    <option value="Concluído">Concluído</option>
+                    <option value="Abandonado">Abandonado</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="ordenacao">Ordenar por:</label>
+                <select id="ordenacao">
+                    <option value="nome">Nome (A–Z)</option>
+                    <option value="ano">Ano de lançamento</option>
+                    <option value="nota">Maior nota</option>
+                </select>
+            </div>
+
+            <p>Quantidade de jogos cadastrados: <span id="quantidade">2</span></p>
+
+            <ul id="lista-jogos">
+                <li>
+                    <article>
+                        <h3>Minecraft</h3>
+                        <p><strong>Gênero:</strong> Aventura</p>
+                        <p><strong>Plataforma:</strong> PC</p>
+                        <p><strong>Ano:</strong> 2011</p>
+                        <p><strong>Minha nota:</strong> 10/10</p>
+                        <p><strong>Status:</strong> Jogando</p>
+                        <button type="button">Ver detalhes</button>
+                        <button type="button">Editar</button>
+                        <button type="button">Excluir</button>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <h3>EA Sports FC 25</h3>
+                        <p><strong>Gênero:</strong> Esporte</p>
+                        <p><strong>Plataforma:</strong> PC</p>
+                        <p><strong>Ano:</strong> 2024</p>
+                        <p><strong>Minha nota:</strong> 8/10</p>
+                        <p><strong>Status:</strong> Jogando</p>
+                        <button type="button">Ver detalhes</button>
+                        <button type="button">Editar</button>
+                        <button type="button">Excluir</button>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <section id="detalhes">
+            <h2>Detalhes do jogo</h2>
+
+            <details>
+                <summary>Como funciona o GameHub?</summary>
+                <p>
+                    O GameHub é um catálogo pessoal para organizar seus jogos,
+                    registrar avaliações, acompanhar seu progresso e consultar
+                    informações sobre cada título.
+                </p>
+            </details>
+
+            <details>
+                <summary>Quais informações posso registrar?</summary>
+                <p>
+                    Você pode registrar o nome, gênero, plataforma, ano de
+                    lançamento, nota pessoal, status e descrição de cada jogo.
+                </p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>GameHub — Meu catálogo pessoal de jogos.</p>
+        <p>Projeto desenvolvido para fins educacionais.</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
